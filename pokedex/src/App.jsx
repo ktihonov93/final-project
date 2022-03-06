@@ -1,10 +1,10 @@
-import PokemonList from './Containers/PokemonList'
+import Home from './Containers/Home'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <PokemonList />
+      <Home />
     </div>
   );
 }
