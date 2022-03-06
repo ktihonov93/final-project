@@ -1,14 +1,16 @@
+import { Link } from "react-router-dom";
 import './PokemonCard.css'
 
-export default function PokemonCard({ key, name }) {
-  console.log(name && name != null && name !== undefined ? name
-    : "unknown")
+export default function PokemonCard({ id, name }) {
   return (
+
     <article className='PokemonCard'>
-      <p>id: {key}</p>
-      <p>name: {name && name != null && name !== undefined ? name
-        : "unknown"}</p>
+      <Link to={{ pathname: `/${id}` }}>
+        <p>id: {id}</p>
+        <p>name: {name ? name : "unknown"}</p>
+      </Link>
       <button>Catch</button>
     </article>
+
   )
 }

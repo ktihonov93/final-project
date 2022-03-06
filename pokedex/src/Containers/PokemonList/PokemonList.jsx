@@ -14,21 +14,22 @@ export default function PokemonList() {
             // Extract the DATA from the received response
             .then((res) => {
                 setPokemon(res.data.results);
-                console.log(res.data.results[1].name)
                 setLoading(false);
             });
     }, []);
 
     return (
-        <div>
+        <section>
             {!loading ? (
-                //`${pokemon[0].name}`
-                [].map((pokemon, i) => (
-                    <PokemonCard key={i} name={pokemon.name} />
-                ))
+                <>
+                    {pokemon.map((pokemon, i) => (
+                        <PokemonCard key={i} id={pokemon.url.split("/")[pokemon.url.split("/").length - 2]} name={pokemon.name} />
+                    ))}
+                </>
+
             ) : (
                 <LoadingSpinner />
             )}
-        </div>
+        </section>
     )
 }
