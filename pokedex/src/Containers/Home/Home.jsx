@@ -8,9 +8,7 @@ export default function Home() {
         <Router>
             <div>
                 <Routes>
-                    <Route exact path="/">
-                        <PokemonList />
-                    </Route>
+                    <Route path="/" element={<PokemonList />} />
                     <Route path="/:id" element={<PokemonDetails />} />
                 </Routes>
             </div>
