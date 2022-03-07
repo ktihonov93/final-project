@@ -6,10 +6,9 @@ import './PokemonDetails.css'
 
 export default function PokemonDetails() {
     const { id } = useParams();
-    
+
     const [pokemon, setPokemon] = useState(null);
     const [loading, setLoading] = useState(true);
-    console.log(id)
 
     useEffect(() => {
         axios
@@ -26,7 +25,9 @@ export default function PokemonDetails() {
                 <>
                     <p>id: {pokemon.id}</p>
                     <p>name: {pokemon.name}</p>
-                    <p>{id}</p>
+                    <img src={pokemon.sprites.other['official-artwork'].front_default} alt="pokemon image"></img>
+                    <p>abilities: {pokemon.abilities.map((a, i) => a.ability.name + (i !== pokemon.abilities.length - 1 ? ', ' : ''))}</p>
+                    <p>types: {pokemon.types.map((t, i) => t.type.name + (i !== pokemon.types.length - 1 ? ', ' : ''))}</p>
                 </>
             ) : (
                 <LoadingSpinner />
