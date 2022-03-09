@@ -23,7 +23,7 @@ export default function PokemonList() {
             {!loading ? (
                 <>
                     {pokemon.map((pokemon, i) => (
-                        <PokemonCard key={i} id={pokemon.url.split("/")[pokemon.url.split("/").length - 2]} name={pokemon.name} />
+                        <PokemonCard key={i} id={pokemon.url.split("/")[pokemon.url.split("/").length - 2]} pokemon={pokemon} />
                     ))}
                 </>
 

@@ -5,13 +5,11 @@ import './Home.css'
 
 export default function Home() {
     return (
-        <Router>
             <div>
                 <Routes>
                     <Route path="/" element={<PokemonList />} />
                     <Route path="/:id" element={<PokemonDetails />} />
                 </Routes>
             </div>
-        </Router>
     )
 }

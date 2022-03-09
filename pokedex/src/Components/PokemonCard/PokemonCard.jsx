@@ -1,21 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
+import {PokemonContext} from '../../Utils/PokemonContext'
 import { Link } from "react-router-dom";
 import './PokemonCard.css'
 
-export default function PokemonCard({ id, name }) {
-  const [isCaught, setIsCaught] = useState(false);
+export default function PokemonCard({ id, pokemon }) {
+  const {addPokemonToCaughtList, pokemonList} = useContext(PokemonContext);
 
-  function handleCatchDate(){
-    return new Date();
-  }
+  let storedPokemon = pokemonList.find(o => o.id === pokemon.id);
+
+  console.log(storedPokemon)
+
+  const pokemonListDisabled = storedPokemon ? true : false;
 
   return (
     <article className='PokemonCard'>
       <Link to={{ pathname: `/${id}` }}>
         <p>id: {id}</p>
-        <p>name: {name ? name : "unknown"}</p>
+        <p>name: {pokemon.name ? pokemon.name : "unknown"}</p>
       </Link>
-      <button /*onClick={getDate}*/>Catch</button>
+      <button disabled={pokemonListDisabled} onClick={() => addPokemonToCaughtList(pokemon)}>Catch</button>
     </article>
 
   )
