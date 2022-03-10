@@ -20,9 +20,13 @@ export const PokemonProvider = props => {
         dispatch({ type: "ADD_POKEMON_TO_CAUGHTLIST", payload: pokemon })
     }
 
+    const removePokemonFromCaughtList = (id) => {
+        dispatch({ type: "REMOVE_POKEMON_FROM_CAUGHTLIST", payload: id })
+    }
+
     return (
         <PokemonContext.Provider
-            value={{ pokemonList: state.pokemonList, caught: state.caught, addPokemonToCaughtList }}>
+            value={{ pokemonList: state.pokemonList, caught: state.caught, addPokemonToCaughtList, removePokemonFromCaughtList }}>
             {props.children}
         </PokemonContext.Provider>
     )

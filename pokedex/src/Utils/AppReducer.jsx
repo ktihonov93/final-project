@@ -4,6 +4,11 @@ export default (state, action) => {
             return {
                 ...state,
                 pokemonList: [action.payload, ...state.pokemonList],
+            };
+        case "REMOVE_POKEMON_FROM_CAUGHTLIST":
+            return {
+                ...state,
+                pokemonList: state.pokemonList.filter(p => p.id !== action.payload)
             }
         default:
             return state
