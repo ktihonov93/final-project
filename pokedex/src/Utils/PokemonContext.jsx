@@ -2,7 +2,6 @@ import React, { createContext, useReducer, useEffect } from "react";
 import AppReducer from './AppReducer';
 
 const initialState = {
-    pokemonList: localStorage.getItem('pokemonList') ? JSON.parse(localStorage.getItem('pokemonList')) : [],
     caught: localStorage.getItem('caught') ? JSON.parse(localStorage.getItem('caught')) : [],
 };
 
@@ -12,8 +11,7 @@ export const PokemonProvider = props => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
     useEffect(() => {
-        localStorage.setItem('pokemonList', JSON.stringify(state.pokemonList));
-        localStorage.setItem('caught', JSON.stringify(state.caught))
+        localStorage.setItem('caught', JSON.stringify(state.caught));
     }, [state])
 
     const addPokemonToCaughtList = (pokemon) => {
@@ -26,7 +24,7 @@ export const PokemonProvider = props => {
 
     return (
         <PokemonContext.Provider
-            value={{ pokemonList: state.pokemonList, caught: state.caught, addPokemonToCaughtList, removePokemonFromCaughtList }}>
+            value={{ caught: state.caught, addPokemonToCaughtList, removePokemonFromCaughtList }}>
             {props.children}
         </PokemonContext.Provider>
     )

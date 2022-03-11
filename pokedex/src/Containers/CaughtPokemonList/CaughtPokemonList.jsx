@@ -4,15 +4,14 @@ import PokemonCard from '../../Components/PokemonCard/PokemonCard';
 import './CaughtPokemonList.css'
 
 export default function CaughtPokemonList() {
-  const { pokemonList, addPokemonToCaughtList, removePokemonFromCaughtList } = useContext(PokemonContext);
-  console.log(pokemonList)
+  const { caught, addPokemonToCaughtList, removePokemonFromCaughtList } = useContext(PokemonContext);
+  console.log(caught)
   return (
     <div>
       <p>CaughtPokemonList</p>
-      <p>{pokemonList.map(o => o.name)}</p>
       <>
-        {pokemonList.map((pokemon, i) => (
-          <PokemonCard key={i} id={pokemon.url.split("/")[pokemon.url.split("/").length - 2]} pokemon={pokemon} storedPokemon={pokemonList.find(o => o.id === pokemon.id)} addPokemonToCaughtList={addPokemonToCaughtList} removePokemonFromCaughtList={removePokemonFromCaughtList} />
+        {caught.map((pokemon, i) => (
+          <PokemonCard key={i} id={pokemon.url.split("/")[pokemon.url.split("/").length - 2]} pokemon={pokemon} storedPokemon={caught.find(o => o.id === pokemon.id)} addPokemonToCaughtList={addPokemonToCaughtList} removePokemonFromCaughtList={removePokemonFromCaughtList} />
         ))}
       </>
     </div>

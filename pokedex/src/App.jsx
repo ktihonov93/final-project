@@ -7,16 +7,17 @@ import './App.css';
 
 function App() {
   return (
-    <PokemonProvider>
+    
       <Router>
+        <PokemonProvider>
         <Header />
-
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="*" element={<Home />} />
           <Route exact path="/caught" element={<CaughtPokemonList />} />
         </Routes>
+        </PokemonProvider>
       </Router>
-    </PokemonProvider>
+    
   );
 }
 

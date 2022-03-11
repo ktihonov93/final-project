@@ -3,12 +3,12 @@ export default (state, action) => {
         case "ADD_POKEMON_TO_CAUGHTLIST":
             return {
                 ...state,
-                pokemonList: [action.payload, ...state.pokemonList],
+                caught: [action.payload, ...state.caught],
             };
         case "REMOVE_POKEMON_FROM_CAUGHTLIST":
             return {
                 ...state,
-                pokemonList: state.pokemonList.filter(p => p.id !== action.payload)
+                caught: state.caught.filter(p => p.id !== action.payload)
             }
         default:
             return state
