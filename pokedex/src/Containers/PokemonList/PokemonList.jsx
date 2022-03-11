@@ -25,8 +25,8 @@ export default function PokemonList() {
         <section>
             {!loading ? (
                 <>
-                    {pokemon.map((pokemon, i) => (
-                        <PokemonCard key={i} id={pokemon.url.split("/")[pokemon.url.split("/").length - 2]} pokemon={pokemon} storedPokemon={caught.find(o => o.id === pokemon.id)} addPokemonToCaughtList={addPokemonToCaughtList} removePokemonFromCaughtList={removePokemonFromCaughtList} />
+                    {pokemon.map((p, i) => (
+                        <PokemonCard key={i} id={p.url.split("/")[p.url.split("/").length - 2]} pokemon={p} storedPokemon={caught.find(o => o.id === p.id)} addPokemonToCaughtList={addPokemonToCaughtList} removePokemonFromCaughtList={removePokemonFromCaughtList} />
                     ))}
                 </>
             ) : (

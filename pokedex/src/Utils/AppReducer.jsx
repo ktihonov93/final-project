@@ -1,7 +1,10 @@
+import { format } from 'date-fns';
+
 export default (state, action) => {
     switch(action.type){
         case "ADD_POKEMON_TO_CAUGHTLIST":
-            return {
+            action.payload.date = format(new Date(), 'dd MMM yyyy');
+            return {                
                 ...state,
                 caught: [action.payload, ...state.caught],
             };
