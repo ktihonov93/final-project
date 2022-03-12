@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import './PokemonCard.css'
 
 export default function PokemonCard({ id, pokemon, storedPokemon, addPokemonToCaughtList, removePokemonFromCaughtList }) {
-  console.log(pokemon)
 
   return (
     <article className='PokemonCard'>
