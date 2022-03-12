@@ -1,0 +1,16 @@
+.page-toggler{
+    display: flex;
+    align-items: center;    
+}
+
+.page-toggler * {
+    margin: 5px;
+}
+
+.page-toggler__button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: inherit;
+    font-weight: inherit;
+}

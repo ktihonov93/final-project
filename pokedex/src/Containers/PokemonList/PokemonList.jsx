@@ -3,6 +3,8 @@ import { PokemonContext } from '../../Utils/PokemonContext';
 import axios from 'axios';
 import LoadingSpinner from "../../Components/LoadingSpinner";
 import PokemonCard from '../../Components/PokemonCard';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import './PokemonList.css';
 
 export default function PokemonList() {
@@ -10,7 +12,7 @@ export default function PokemonList() {
     const [loading, setLoading] = useState(true);
     const [offset, setOffset] = useState(0);
 
-    const { caught, addPokemonToCaughtList, removePokemonFromCaughtList } = useContext(PokemonContext);    
+    const { caught, addPokemonToCaughtList, removePokemonFromCaughtList } = useContext(PokemonContext);
 
     const getNextPage = () => setOffset(offset + 12);
     const getPrevPage = () => setOffset(offset - 12);
@@ -30,11 +32,14 @@ export default function PokemonList() {
             <section>
                 {pokemon.results.map((p, i) => (
                     <PokemonCard key={i} id={p.url.split("/")[p.url.split("/").length - 2]} pokemon={p} storedPokemon={caught.find(o => o.id === p.id)} addPokemonToCaughtList={addPokemonToCaughtList} removePokemonFromCaughtList={removePokemonFromCaughtList} />
-                ))}             
-                <button disabled={ pokemon.previous ? false : true} onClick={getPrevPage}>previous</button>
-                <button disabled={ pokemon.next ? false : true} onClick={getNextPage}>next</button>
-                <p>{offset / 12 + 1} / {Math.ceil(10228/12)}</p>
-                
+                ))}
+                <div className="page-toggler">
+                    <button className="page-toggler__button" disabled={pokemon.previous ? false : true} onClick={getPrevPage}><ArrowBackIosNewIcon /></button>                    
+                    <p>{offset / 12 + 1} / {Math.ceil(10228 / 12)}</p>
+                    <button className="page-toggler__button" disabled={pokemon.next ? false : true} onClick={getNextPage}><ArrowForwardIosIcon /></button>
+                </div>
+
+
             </section>
         ) : (
             <LoadingSpinner />
