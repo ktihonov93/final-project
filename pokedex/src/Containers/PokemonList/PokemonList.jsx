@@ -31,7 +31,7 @@ export default function PokemonList() {
         !loading ? (
             <section>
                 {pokemon.results.map((p, i) => (
-                    <PokemonCard key={i} id={p.url.split("/")[p.url.split("/").length - 2]} pokemon={p} storedPokemon={caught.find(o => o.id === p.id)} addPokemonToCaughtList={addPokemonToCaughtList} removePokemonFromCaughtList={removePokemonFromCaughtList} />
+                    <PokemonCard key={i} id={p.url.split("/")[p.url.split("/").length - 2]} pokemon={p} storedPokemon={caught.some(o => o.name === p.name)} addPokemonToCaughtList={addPokemonToCaughtList} removePokemonFromCaughtList={removePokemonFromCaughtList} />
                 ))}
                 <div className="page-toggler">
                     <button className="page-toggler__button" disabled={pokemon.previous ? false : true} onClick={getPrevPage}><ArrowBackIosNewIcon /></button>                    

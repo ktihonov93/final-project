@@ -22,7 +22,7 @@ export default function PokemonCard({ id, pokemon, storedPokemon, addPokemonToCa
           </CardContent>
         </Link>
         <Button
-          onClick={() => storedPokemon ? removePokemonFromCaughtList(pokemon.id) : addPokemonToCaughtList(pokemon)}
+          onClick={() => storedPokemon ? removePokemonFromCaughtList(pokemon.name) : addPokemonToCaughtList(pokemon)}          
           sx={{ marginBottom: 3, marginLeft: 2 }}
           size="small"
           variant={ storedPokemon ? "contained" : "outlined" }

@@ -11,7 +11,7 @@ export default (state, action) => {
         case "REMOVE_POKEMON_FROM_CAUGHTLIST":
             return {
                 ...state,
-                caught: state.caught.filter(p => p.id !== action.payload)
+                caught: state.caught.filter(p => p.name !== action.payload)
             }
         default:
             return state

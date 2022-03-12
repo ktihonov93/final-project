@@ -18,8 +18,8 @@ export const PokemonProvider = props => {
         dispatch({ type: "ADD_POKEMON_TO_CAUGHTLIST", payload: pokemon })
     }
 
-    const removePokemonFromCaughtList = (id) => {
-        dispatch({ type: "REMOVE_POKEMON_FROM_CAUGHTLIST", payload: id })
+    const removePokemonFromCaughtList = (name) => {
+        dispatch({ type: "REMOVE_POKEMON_FROM_CAUGHTLIST", payload: name })
     }
 
     return (
