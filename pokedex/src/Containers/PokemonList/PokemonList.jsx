@@ -29,13 +29,15 @@ export default function PokemonList() {
 
     return (
         !loading ? (
-            <section className="pokemon-list">
+            <section className="pokemons">
                 <h2>Pokemons</h2>
-                {pokemon.results.map((p, i) => (
-                    <PokemonCard key={i} id={p.url.split("/")[p.url.split("/").length - 2]} pokemon={p} storedPokemon={caught.some(o => o.name === p.name)} addPokemonToCaughtList={addPokemonToCaughtList} removePokemonFromCaughtList={removePokemonFromCaughtList} />
-                ))}
+                <div className="pokemon-list">
+                    {pokemon.results.map((p, i) => (
+                        <PokemonCard key={i} id={p.url.split("/")[p.url.split("/").length - 2]} pokemon={p} storedPokemon={caught.some(o => o.name === p.name)} addPokemonToCaughtList={addPokemonToCaughtList} removePokemonFromCaughtList={removePokemonFromCaughtList} />
+                    ))}
+                </div>
                 <div className="page-toggler">
-                    <button className="page-toggler__button" disabled={pokemon.previous ? false : true} onClick={getPrevPage}><ArrowBackIosNewIcon /></button>                    
+                    <button className="page-toggler__button" disabled={pokemon.previous ? false : true} onClick={getPrevPage}><ArrowBackIosNewIcon /></button>
                     <p>{offset / 12 + 1} / {Math.ceil(10228 / 12)}</p>
                     <button className="page-toggler__button" disabled={pokemon.next ? false : true} onClick={getNextPage}><ArrowForwardIosIcon /></button>
                 </div>

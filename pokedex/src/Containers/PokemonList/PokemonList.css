@@ -16,12 +16,21 @@
     font-weight: inherit;
 }
 
-.pokemon-list{
+.pokemons{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.pokemon-list h2{
+.pokemons h2{
     color: cornsilk;
 }
+
+@media screen and (min-width:768px) {
+    .pokemon-list{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 800px;
+    }
+  }
