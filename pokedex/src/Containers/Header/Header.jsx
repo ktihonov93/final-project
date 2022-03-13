@@ -11,7 +11,7 @@ export default function Header() {
   const [value, setValue] = useState(0);
 
   return (
-    <header>
+    <header className='header'>
         <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
           <BottomNavigation
             showLabels
