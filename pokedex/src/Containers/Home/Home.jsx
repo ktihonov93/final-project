@@ -9,7 +9,7 @@ export default function Home() {
     const { caught } = useContext(PokemonContext);
 
     return (
-            <div>
+            <div className="home">
                 <Routes>
                     <Route path="/" element={<PokemonList />} />
                     <Route path="/:id" element={<PokemonDetails caught={caught} />} />

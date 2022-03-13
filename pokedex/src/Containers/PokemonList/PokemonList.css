@@ -1,6 +1,6 @@
 .page-toggler{
     display: flex;
-    align-items: center;    
+    align-items: center;       
 }
 
 .page-toggler * {
@@ -13,4 +13,10 @@
     outline: none;
     font-size: inherit;
     font-weight: inherit;
+}
+
+.pokemon-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

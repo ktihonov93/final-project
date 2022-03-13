@@ -1,0 +1,10 @@
+.pokemon-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: cornsilk;
+}
+
+.pokemon-details div h4{
+    text-align: center;
+}

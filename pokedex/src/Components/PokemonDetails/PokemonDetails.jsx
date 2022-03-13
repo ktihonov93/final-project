@@ -23,16 +23,17 @@ export default function PokemonDetails({ caught }) {
     }, [id]);
     
     return (
-        <article>
+        <article className="pokemon-details">
             {!loading ? pokemon && (
-                <>
+                <div>
+                    <h4>Pokemon Characteristics</h4>
                     <p>id: {pokemon.id}</p>
                     <p>name: {pokemon.name}</p>
                     <img src={pokemon.sprites.other['official-artwork'].front_default} alt="pokemon"></img>
                     <p>abilities: {pokemon.abilities.map((a, i) => a.ability.name + (i !== pokemon.abilities.length - 1 ? ', ' : ''))}</p>
                     <p>types: {pokemon.types.map((t, i) => t.type.name + (i !== pokemon.types.length - 1 ? ', ' : ''))}</p>
                     <p>{ hasPokemon(id) ? `Caught on ${getCaughtDate(id)}` : "Not caught yet" }</p>
-                </>
+                </div>
             ) : (
                 <LoadingSpinner />
             )}
