@@ -20,8 +20,8 @@ export default function Header() {
               setValue(newValue);
             }}
           >
-              <BottomNavigationAction label="Pokemons" component={Link} to='/' icon={<Home />} />
-              <BottomNavigationAction label="Caught pokemons" component={Link} to='/caught' icon={<CatchingPokemonIcon />} />
+              <BottomNavigationAction label="Pokemons" component={Link} to='/final-project' icon={<Home />} />
+              <BottomNavigationAction label="Caught pokemons" component={Link} to='/final-project/caught' icon={<CatchingPokemonIcon />} />
 
           </BottomNavigation>
         </Paper>

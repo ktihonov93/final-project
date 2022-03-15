@@ -13,7 +13,7 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="*" element={<Home />} />
-          <Route exact path="/caught" element={<CaughtPokemonList />} />
+          <Route exact path="/final-project/caught" element={<CaughtPokemonList />} />
         </Routes>
         </PokemonProvider>
       </Router>

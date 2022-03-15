@@ -11,8 +11,8 @@ export default function Home() {
     return (
             <div className="home">
                 <Routes>
-                    <Route path="/" element={<PokemonList />} />
-                    <Route path="/:id" element={<PokemonDetails caught={caught} />} />
+                    <Route path="/final-project" element={<PokemonList />} />
+                    <Route path="/final-project/:id" element={<PokemonDetails caught={caught} />} />
                 </Routes>
             </div>
     )
